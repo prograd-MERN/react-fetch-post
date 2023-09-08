@@ -5,9 +5,9 @@ function App() {
   const [currentIndex, setCurrentIndex] = useState(null);
   const [userDetails, setUserDetails] = useState([]);
 
-  const fetchUserDetails = () => {
+  const fetchUserDetails = async() => {
     setCurrentIndex(prevIndex => prevIndex + 1);
-    const response = axios.get('https://jsonplaceholder.typicode.com/posts')
+    const response = await axios  .get('https://jsonplaceholder.typicode.com/posts')
       .then(response => {
         setUserDetails(response.data);
         setCurrentIndex(0);
