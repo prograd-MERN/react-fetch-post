@@ -1,30 +1,56 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const FetchComponent = () => {
-  const [data, setData] = useState([]);
+function App() {
+  const [currentIndex, setCurrentIndex] = useState(null);
+  const [userDetails, setUserDetails] = useState([]);
 
-  const fetchData = async () => {
-      const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
-      console.log(response.data);
-      setData(response.data);
-  };
+  const fetchUserDetails = () => {
+    setCurrentIndex(prevIndex => prevIndex + 1);
+    const response = axios.get('https://jsonplaceholder.typicode.com/posts')
+      .then(response => {
+        setUserDetails(response.data);
+        setCurrentIndex(0);
+      })
+      .catch(error => {
+        console.error('Error fetching user details:', error);
+      });
+  }
+
+  const displayUserDetail = () => {
+    if (currentIndex !== null && currentIndex < userDetails.length) {
+      const user = userDetails[currentIndex];
+      return (
+        <div>
+          <h2>{user.name}</h2>
+          <p>Id  : {user.id}</p>
+          <p>Title  : {user.title}</p>
+          <p>Body  : {user.body}</p>
+        </div>
+      );
+    } else {
+      return null;
+    }
+  }
+
+  const nextUser = () => {
+    setCurrentIndex(prevIndex => prevIndex + 1);
+  }
 
   return (
     <React.Fragment>
-      <div id='api-data'>
-        {data.map(post => (
-          <div key={post.id}>
-            <h2>{post.title}</h2>
-            <p>{post.body}</p>
-          </div>
-        ))}
+      <div id='details-api'>
+      <button id='button-fetch-details' onClick={fetchUserDetails}>Fetch User Details</button>
+       
+            <div id='details'>{displayUserDetail()}</div>    
+        {
+          currentIndex !== null && currentIndex < userDetails.length - 1 &&
+          <button id='button-nextuser' onClick={nextUser}>Click Here For Next Details</button>
+        }
       </div>
-      <button id='Fetch-button' onClick={fetchData}>
-        Fetch User Data
-      </button>
+      <div class="footer">Created by Bala</div>
     </React.Fragment>
   );
-};
+}
 
-export default FetchComponent;
+export default App;
