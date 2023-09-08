@@ -5,8 +5,8 @@ import FetchComponent from './components/FetchComponent/FetchComponent'
 function App() {
   return (
     <React.Fragment> 
-      <TitleComponent/>
-      <FetchComponent/>
+        <TitleComponent/>
+        <FetchComponent/>   
     </React.Fragment>
   )
 }

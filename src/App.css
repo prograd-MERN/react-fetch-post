@@ -2,9 +2,28 @@
 {
   margin: 0;
 }
-/* .heading
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+.Fetch-post-heading
 {
+  background-color: black;
+  color: white;
   display: flex;
   justify-content: center;
-  align-items: center;
-} */
+  flex-direction: row;
+  margin-top: 80px;
+}
+#Fetch-button
+{
+  background-color: bisque;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;  
+  flex-direction: row;
+  margin-left: 610px;
+  margin-top: 20px;
+}
+#root,body
+{
+  background-color: black;
+  font-family: 'Roboto', sans-serif;
+}

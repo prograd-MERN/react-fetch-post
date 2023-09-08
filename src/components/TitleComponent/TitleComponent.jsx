@@ -2,7 +2,7 @@ import React from 'react'
 
 function TitleComponent() {
   return (
-    <div class="heading">TitleComponent</div>
+    <div class="Fetch-post-heading"><h1>User Details</h1></div>
   )
 }
 
