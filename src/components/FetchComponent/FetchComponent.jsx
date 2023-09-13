@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './FetchComponent.css'
 import axios from 'axios';
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
   const fetchUserDetails = async() => {
     setCurrentIndex(prevIndex => prevIndex + 1);
     const response = await axios  .get('https://jsonplaceholder.typicode.com/posts')
-      .then(response => {
+      .then(  response => {
         setUserDetails(response.data);
         setCurrentIndex(0);
       })

@@ -1,0 +1,8 @@
+.Fetch-post-heading
+{
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}

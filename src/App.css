@@ -3,57 +3,10 @@
   margin: 0;
 }
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
-.Fetch-post-heading
-{
-  background-color: black;
-  color: white;
-  display: flex;
-  justify-content: center;
-  margin-top: 80px;
-}
 
 #root,body
 {
-  background-color: black;
-  font-family: 'Roboto', sans-serif;
+background-color: black;
+font-family: 'Roboto', sans-serif;
 }
 
-#details-api
-{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  color: white;
-}
-#button-fetch-details 
-{
-  display: flex;
-  position: fixed;
-  justify-content: center;
-  background-color: green;
-  border-radius: 10px;
-  border: solid white 2px;
-  margin: 20px;
-
-}
-#button-nextuser
-{
-  display: flex;
-  position: fixed;
-  justify-content: center;
-  background-color: yellowgreen;
-  border-radius: 10px;
-  margin: 20px;
-  border: solid white 2px;
-}
-#details
-{
-  padding: 100px;
-}
-.footer{
-  color: white;
-  display: flex;
-  margin-left: 630px;
-  margin-top: 180px;
-  position: fixed;
-}

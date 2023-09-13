@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './TitleComponent.css'
 function TitleComponent() {
   return (
     <React.Fragment>
